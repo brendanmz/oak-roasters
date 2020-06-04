@@ -2,14 +2,40 @@ import React from 'react';
 import forestImage from '../images/forest-image.jpg';
 import numbersImage from '../images/numbers.jpg';
 import yellowCoffeeImage from '../images/yellow-coffee-cup.jpg';
-import { Link } from '../styles/components';
+import { Link, Wrapper, Button, SectionHeading, Image } from '../styles/components';
+import styled from 'styled-components';
+import theme from '../styles/theme';
 
+const CardsWrapper = styled.div`
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: ${theme.breakpoints.mobile}) {  
+    flex-direction: row;
+  }
+`
 
+const CardDiv = styled.div`
+  margin: 0 2rem;
+  @media (min-width: ${theme.breakpoints.mobile}) {  
+    width: 33%;
+  }
+`
+const JournalHeading = styled.h3`
+  padding-bottom: 0.5rem;
+`
+
+const JournalP = styled.p`
+  padding-bottom: 1rem;
+
+`
 
 function Journal() {
   const posts = {
     one: {
-      title: "What're we up to",
+      title: "What're we up to?",
       image: forestImage,
     },
     two: {
@@ -22,28 +48,30 @@ function Journal() {
     },
   }
   return (
-    <div >
-      <h2 >Journal</h2>
-      <div >
+    <Wrapper lighter >
+      <SectionHeading >Journal</SectionHeading>
+      <CardsWrapper >
         <Card title={posts.one.title} image={posts.one.image} />
         <Card title={posts.two.title} image={posts.two.image} />
         <Card title={posts.three.title} image={posts.three.image} />
-      </div>
-      <button type='button'>See more</button>
-    </div>
+      </CardsWrapper>
+      <Button type='button'>See more</Button>
+    </Wrapper>
 
   );
 }
 
-
-
 function Card(props) {
   return (
-    <Link href='/' >
-      <img src={props.image} alt='Blog post' style={{ maxWidth: 350 }} />
-      <h3 >{props.title}</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-    </Link>
+    <CardDiv>
+      <div >
+        <Image card src={props.image} alt='Blog post' />
+      </div>
+      <Link href='/' >
+        <JournalHeading >{props.title}</JournalHeading>
+        <JournalP>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</JournalP>
+      </Link>
+    </CardDiv>
   )
 }
 

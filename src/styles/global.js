@@ -14,6 +14,10 @@ export default createGlobalStyle`
   body {
     height: 100%;
     width: 100%;
+    font-size: 16px;
+    @media (min-width: ${theme.breakpoints.mobile}) {
+      font-size: 18px;
+    }
   }
 
 
