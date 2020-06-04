@@ -1,7 +1,6 @@
 import React from 'react';
 import coffeeBag from '../images/patch-roast-bag-transparent.png';
 import { Wrapper, Button, SectionHeading, Image } from '../styles/components';
-import styled from 'styled-components';
 
 
 
