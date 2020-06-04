@@ -1,42 +1,43 @@
 import React from 'react';
-import '../App.css';
 import logo from '../images/oak-logo.svg'
+import { Link, ListItem } from '../styles/components';
+
 
 function Footer() {
   return (
-    <footer className=''>
-      <div className=''>
-        <ul className=''>
-          <li className=''><a href='/' className=''>Home</a></li>
-          <li className=''><a href='/' className=''>About us</a></li>
-          <li className=''><a href='/' className=''>Our coffee</a></li>
+    <footer className='Footer'>
+      <div >
+        <ul >
+          <ListItem ><Link href='/' >Home</Link></ListItem>
+          <ListItem ><Link href='/' >About us</Link></ListItem>
+          <ListItem ><Link href='/' >Our coffee</Link></ListItem>
         </ul>
-        <ul className=''>
-          <li className=''><a href='/' className=''>Journal</a></li>
-          <li className=''><a href='/' className=''>Shop</a></li>
-          <li className=''><a href='/' className=''>The Roasters</a></li>
+        <ul >
+          <ListItem ><Link href='/' >Journal</Link></ListItem>
+          <ListItem ><Link href='/' >Shop</Link></ListItem>
+          <ListItem ><Link href='/' >The Roasters</Link></ListItem>
         </ul>
-        <ul className=''>
-          <li className=''><a href='/' className=''>Contact</a></li>
-          <li className=''><a href='/' className=''>Events</a></li>
-          <li className=''><a href='/' className=''>Training</a></li>
+        <ul >
+          <ListItem ><Link href='/' >Contact</Link></ListItem>
+          <ListItem ><Link href='/' >Events</Link></ListItem>
+          <ListItem ><Link href='/' >Training</Link></ListItem>
         </ul>
       </div>
-      <div className=''>
-        <img src={logo} alt='logo' className='' />
+      <div >
+        <img src={logo} alt='logo' style={{ height: '3rem' }} />
       </div>
-      <div className=''>
+      <div >
         <div>&copy; Oak Roasters</div>
-        <ul className=''>
-          <li>
-            <a href='/' className=''>Delivery</a>
-          </li>
-          <li>
-            <a href='/' className=''>Privacy</a>
-          </li>
-          <li>
-            <a href='/' className=''>Terms & Conditions</a>
-          </li>
+        <ul >
+          <ListItem>
+            <Link href='/' >Delivery</Link>
+          </ListItem>
+          <ListItem>
+            <Link href='/' >Privacy</Link>
+          </ListItem>
+          <ListItem>
+            <Link href='/' >Terms & Conditions</Link>
+          </ListItem>
         </ul>
       </div>
 

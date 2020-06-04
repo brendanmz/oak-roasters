@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 import coffeeBag from '../images/patch-roast-bag-transparent.png';
 
 function Coffee() {
