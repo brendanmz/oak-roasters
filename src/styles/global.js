@@ -3,8 +3,6 @@ import theme from './theme'
 
 export default createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200;0,300;1,400;1,500;0,600;0,900;1,700&display=swap');
-
   * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;

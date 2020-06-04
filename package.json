@@ -17,7 +17,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "netlify-deploy-prod": "yarn build && netlify deploy --prod",
-    "netlify-deploy": "yarn build && netlify deploy"
+    "netlify-deploy": "yarn build && netlify deploy",
+    "local-deploy": "yarn build && serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
