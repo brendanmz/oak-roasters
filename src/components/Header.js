@@ -5,6 +5,8 @@ import logo from '../images/oak-logo.svg';
 import theme from '../styles/theme';
 import background from '../images/beans-background.jpg';
 
+// TODO: Add sidebar with animation
+
 const MenuBar = styled.div`
   background-color: ${theme.colors.yellow};
   position: fixed;
