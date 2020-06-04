@@ -7,3 +7,5 @@ Built using:
 - React
 - create-react-app
 - styled-components
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c5249191-137b-492e-94f7-5f3cd0daf5b5/deploy-status)](https://app.netlify.com/sites/oak-roasters/deploys)
