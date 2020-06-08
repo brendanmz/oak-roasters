@@ -63,7 +63,7 @@ function Journal() {
 
 function Card(props) {
   return (
-    <CardDiv>
+    <CardDiv style={{ maxWidth: 500 }}>
       <div >
         <Image card src={props.image} alt='Blog post' />
       </div>

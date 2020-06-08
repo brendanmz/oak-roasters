@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { Link, ListItem } from '../styles/components';
 import logo from '../images/oak-logo.svg';
 import theme from '../styles/theme';
-import background from '../images/beans-background.jpg';
+import background from '../images/beans-background-smaller.jpg';
 
 
 const MenuBar = styled.div`
