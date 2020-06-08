@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link, ListItem } from '../styles/components';
 import logo from '../images/oak-logo.svg';
 import theme from '../styles/theme';
 import background from '../images/beans-background.jpg';
 
-// TODO: Add sidebar with animation
 
 const MenuBar = styled.div`
   background-color: ${theme.colors.yellow};
@@ -32,9 +31,26 @@ const TitleBackground = styled.div`
   font-size: 1.7rem;
   font-weight: ${theme.fontWeight.bold}
 `
+const slideSidebar = keyframes`
+  0% {
+    left: -14rem; 
+  }
+  100% {
+    left: 0rem;
+  }
+`
+const slideSidebarRev = keyframes`
+  0% {
+    left: 0rem;
+  }
+  100% {
+    left: -14rem; 
+  }
+`
 
 const SidebarWrapper = styled.div`
   position: absolute;
+  animation: ${props => props.position ? slideSidebar : slideSidebarRev} 0.3s ease-in-out 1;
   left: ${props => props.position ? '0' : '-14rem'};
   padding: 5rem 5rem 5rem 3rem;
   height: 85vh;
@@ -43,18 +59,16 @@ const SidebarWrapper = styled.div`
   & li {
     padding: 0.5rem 0;
   }
-
 `
 console.log(SidebarWrapper);
 
 function Header() {
-  const [position, setPosition] = useState(true);
+  const [position, setPosition] = useState(false);
+
 
   function toggleSidebar(e) {
     e.preventDefault();
     position !== true ? setPosition(true) : setPosition(false);
-    console.log('position :>> ', position);
-    console.log(SidebarWrapper);
   }
   return (
     <header >
@@ -63,7 +77,7 @@ function Header() {
         <Link href='/'><img src={logo} alt='logo' style={{ height: '2rem' }} /> </Link>
         <Link href="/" ><h4 style={{ fontWeight: theme.fontWeight.regular }}>Shop</h4></Link>
       </MenuBar>
-      <SidebarWrapper position >
+      <SidebarWrapper position={position} >
         <MenuSideBar />
       </SidebarWrapper>
       <TitleWrapper>
