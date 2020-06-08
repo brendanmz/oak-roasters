@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from '../styles/components';
+import { Link, ListItem } from '../styles/components';
 import logo from '../images/oak-logo.svg';
 import theme from '../styles/theme';
 import background from '../images/beans-background.jpg';
@@ -33,14 +33,39 @@ const TitleBackground = styled.div`
   font-weight: ${theme.fontWeight.bold}
 `
 
+const SidebarWrapper = styled.div`
+  position: absolute;
+  left: ${props => props.position ? '0' : '-14rem'};
+  padding: 5rem 5rem 5rem 3rem;
+  height: 85vh;
+  background-color: white;
+  text-align: left;
+  & li {
+    padding: 0.5rem 0;
+  }
+
+`
+console.log(SidebarWrapper);
+
 function Header() {
+  const [position, setPosition] = useState(true);
+
+  function toggleSidebar(e) {
+    e.preventDefault();
+    position !== true ? setPosition(true) : setPosition(false);
+    console.log('position :>> ', position);
+    console.log(SidebarWrapper);
+  }
   return (
     <header >
       <MenuBar className='MenuBar'>
-        <Link href="/" ><h4 style={{ fontWeight: theme.fontWeight.regular }}>Menu</h4></Link>
+        <Link href="/" onClick={toggleSidebar} ><h4 style={{ fontWeight: theme.fontWeight.regular }}>Menu</h4></Link>
         <Link href='/'><img src={logo} alt='logo' style={{ height: '2rem' }} /> </Link>
         <Link href="/" ><h4 style={{ fontWeight: theme.fontWeight.regular }}>Shop</h4></Link>
       </MenuBar>
+      <SidebarWrapper position >
+        <MenuSideBar />
+      </SidebarWrapper>
       <TitleWrapper>
         <Title />
       </TitleWrapper>
@@ -54,6 +79,21 @@ function Title() {
       <img src={logo} alt='logo' style={{ height: '8rem' }} />
       <div>OAK ROASTERS</div>
     </TitleBackground>
+  )
+}
+
+function MenuSideBar() {
+  return (
+    <ul>
+      <ListItem><Link href="/">About Us</Link></ListItem>
+      <ListItem><Link href="/">Our Coffee</Link></ListItem>
+      <ListItem><Link href="/">Journal</Link></ListItem>
+      <ListItem><Link href="/">Shop</Link></ListItem>
+      <ListItem><Link href="/">The Roasters</Link></ListItem>
+      <ListItem><Link href="/">Contact</Link></ListItem>
+      <ListItem><Link href="/">Events</Link></ListItem>
+      <ListItem><Link href="/">Training</Link></ListItem>
+    </ul>
   )
 }
 
