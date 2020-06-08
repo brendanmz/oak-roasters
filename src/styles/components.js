@@ -40,6 +40,7 @@ export const Button = styled.button`
   border-radius:2rem;
   border: none;
   background: ${props => props.primary ? 'white' : theme.colors.yellow};
+  transition: 0.3s ease-in-out;
 
   &:hover {
     color: ${theme.colors.background};
