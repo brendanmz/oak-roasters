@@ -16,7 +16,8 @@ const MenuBar = styled.div`
   align-items: center;
 `
 const TitleWrapper = styled.div`
-  background-image: url(${background});
+  background: url(${background}) #774731;
+  background-size: cover;
   height: 85vh;
   display: flex;
   align-items: center;
