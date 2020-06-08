@@ -60,7 +60,6 @@ const SidebarWrapper = styled.div`
     padding: 0.5rem 0;
   }
 `
-console.log(SidebarWrapper);
 
 function Header() {
   const [position, setPosition] = useState(false);
