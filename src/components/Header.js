@@ -47,9 +47,9 @@ const slideSidebarRev = keyframes`
     left: -14rem; 
   }
 `
-
+// FIXME: Animation should not be triggered on page load
 const SidebarWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   animation: ${props => props.position ? slideSidebar : slideSidebarRev} 0.3s ease-in-out 1;
   left: ${props => props.position ? '0' : '-14rem'};
   padding: 5rem 5rem 5rem 3rem;
